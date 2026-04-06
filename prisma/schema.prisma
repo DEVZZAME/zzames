@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Project {
+  id                  String         @id @default(cuid())
+  slug                String         @unique
+  title               String
+  period              String?
+  role                String?
+  teamSize            String?
+  stack               String
+  summary             String         @db.Text
+  problem             String?        @db.Text
+  implementation      String?        @db.Text
+  outcome             String?        @db.Text
+  status              PublishStatus  @default(DRAFT)
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+  features            Feature[]
+}
+
+model Feature {
+  id                    String         @id @default(cuid())
+  slug                  String         @unique
+  featureName           String
+  projectId             String
+  background            String?        @db.Text
+  requirements          String?        @db.Text
+  architecture          String?        @db.Text
+  implementationDetails String?        @db.Text
+  edgeCases             String?        @db.Text
+  tradeoffs             String?        @db.Text
+  result                String?        @db.Text
+  status                PublishStatus  @default(DRAFT)
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+  project               Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+}
+
+model BlogPost {
+  id          String          @id @default(cuid())
+  slug        String          @unique
+  title       String
+  excerpt     String?         @db.Text
+  content     String          @db.LongText
+  status      PublishStatus   @default(DRAFT)
+  publishedAt DateTime?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  tags        BlogPostTag[]
+}
+
+model Tag {
+  id        String        @id @default(cuid())
+  name      String        @unique
+  slug      String        @unique
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  posts     BlogPostTag[]
+}
+
+model BlogPostTag {
+  postId String
+  tagId  String
+  post   BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+  @@index([tagId])
+}

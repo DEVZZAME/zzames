@@ -1,0 +1,10 @@
+.env*
+.DS_Store
+node_modules
+.next
+dist
+coverage
+info.txt
+implementation-guide.md
+resume.pdf
+website-plan.md
