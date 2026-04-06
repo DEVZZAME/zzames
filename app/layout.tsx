@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { siteConfig } from "@/lib/site-config";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "강한솔 | Back-end Developer",
-  description: "데이터 흐름을 설계하고 서비스로 구현하는 백엔드 개발자 강한솔의 포트폴리오 사이트",
+  title: siteConfig.title,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
@@ -14,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body className="min-h-screen bg-background text-foreground">
+        <SiteHeader />
+        <div className="mx-auto max-w-6xl px-6 py-12">{children}</div>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
