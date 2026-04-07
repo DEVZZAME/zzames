@@ -1,10 +1,21 @@
+import type { Metadata } from "next";
+
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { getPublicPosts } from "@/lib/content-store";
+import { buildMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = buildMetadata({
+  title: "기술 글",
+  description: "데이터 정합, 외부 연동, 운영 자동화, AI 활용 방식까지 실무 경험을 글로 정리한 블로그.",
+  path: "/blog",
+  type: "article",
+  keywords: ["기술 블로그", "데이터 정합", "운영 자동화", "AI 활용"],
+});
 
 export default async function BlogPage() {
   const posts = await getPublicPosts();

@@ -1,14 +1,38 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getPublicPosts } from "@/lib/content-store";
+import { buildMetadata } from "@/lib/seo";
 
 type BlogDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const posts = await getPublicPosts();
+  const post = posts.find((item) => item.slug === slug);
+
+  if (!post) {
+    return buildMetadata({
+      title: "글을 찾을 수 없습니다",
+      description: "요청한 글 정보를 찾지 못했습니다.",
+      path: `/blog/${slug}`,
+    });
+  }
+
+  return buildMetadata({
+    title: post.title,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    type: "article",
+    keywords: post.tags,
+  });
+}
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;

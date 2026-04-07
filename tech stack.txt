@@ -1,0 +1,54 @@
+1. Back-end
+
+Java
+Spring Boot
+Kotlin
+Node.js
+JWT
+Spring Security
+QueryDSL
+JPA/Hibernate
+Redis(Redisson)
+Batch/Scheduler
+
+2. Front-end
+
+HTML5
+CSS3
+JS
+JSP
+Thymeleaf
+Flutter
+
+3. Database
+
+MySQL
+MariaDB
+MongoDB
+Redis
+
+4. Cloud/Infra
+
+AWS EC2
+ECS
+ECR
+RDS
+S3
+SES
+SQS
+ElastiCache
+Route53
+CloudFront
+Lambda
+
+5. Crawling
+
+Selenium
+HtmlUnit
+Playwright
+Python 기반 스크래핑
+
+6. CI/CD
+
+Github Actions
+Docker

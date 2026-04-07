@@ -1,13 +1,37 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getPublicFeatures } from "@/lib/content-store";
+import { buildMetadata } from "@/lib/seo";
 
 type FeatureDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: FeatureDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const features = await getPublicFeatures();
+  const feature = features.find((item) => item.slug === slug);
+
+  if (!feature) {
+    return buildMetadata({
+      title: "기능을 찾을 수 없습니다",
+      description: "요청한 기능 상세 정보를 찾지 못했습니다.",
+      path: `/features/${slug}`,
+    });
+  }
+
+  return buildMetadata({
+    title: feature.title,
+    description: feature.summary,
+    path: `/features/${feature.slug}`,
+    type: "article",
+    keywords: feature.requirements,
+  });
+}
 
 export default async function FeatureDetailPage({ params }: FeatureDetailPageProps) {
   const { slug } = await params;

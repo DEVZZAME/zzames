@@ -61,9 +61,9 @@ export const profile = {
   github: "https://github.com/DEVZZAME",
   blog: "https://velog.io/@dev_zzame",
   intro: [
-    "이커머스 정산 서비스와 마케팅 플랫폼을 개발하며 외부 데이터 수집, 정합, 비즈니스 로직 연결을 반복적으로 다뤄왔습니다.",
-    "정산 가능한 데이터 구조를 설계하고 빠른 정산 지급 시스템을 구현하며 데이터 신뢰성과 처리 효율을 개선했습니다.",
-    "DB 설계부터 AWS 인프라 구성까지 직접 설계하고 운영한 경험이 있으며, 최근에는 AI 도구를 설계와 구현 단계에 실무적으로 활용하고 있습니다.",
+    "이커머스 정산 서비스와 마케팅 플랫폼을 개발하며, API와 크롤링으로 수집한 외부 데이터를 실제 비즈니스 로직으로 연결하는 작업을 해왔습니다.",
+    "여러 마켓과 PG사 데이터를 정산 가능한 구조로 가공하고, 빠른정산 및 선정산 지급 시스템을 구현하며 데이터 신뢰성과 처리 효율을 함께 개선했습니다.",
+    "모놀리식에서 MSA 전환, DB 설계, AWS 인프라 운영, 서버리스 메일 시스템 구축까지 경험했고 최근에는 AI 기반 개발 도구를 설계와 구현 전반에 적극 활용하고 있습니다.",
   ],
 };
 
@@ -71,22 +71,22 @@ export const strengths = [
   {
     title: "Data Pipeline",
     description:
-      "마켓, PG, 검색광고, 쇼핑 API처럼 출처가 다른 데이터를 수집하고 정합해 서비스 로직으로 연결합니다.",
+      "마켓, PG, 네이버 검색광고, 쇼핑 API처럼 출처가 다른 데이터를 수집하고 정합해 지급·분석 로직으로 연결합니다.",
   },
   {
     title: "Backend Systems",
     description:
-      "정산, 지급, 인증, 스크래핑, 관리자 기능처럼 운영과 직접 연결되는 백엔드 기능을 설계하고 구현합니다.",
+      "빠른정산, 선정산, 홈택스 인증, 전자계약, SMS Agent처럼 운영과 직접 연결되는 백엔드 기능을 설계하고 구현합니다.",
   },
   {
     title: "Infra and Operations",
     description:
-      "MariaDB, Redis, AWS, Lambda, S3, SES를 포함해 서비스 운영에 필요한 인프라를 구성하고 유지합니다.",
+      "MariaDB, Redis, AWS, Lambda, S3, SES, Route53 기반으로 서비스 운영에 필요한 인프라를 구성하고 유지합니다.",
   },
   {
     title: "AI-Augmented Delivery",
     description:
-      "AI 보조 개발 워크플로우를 실무에 적용해 설계, 디버깅, 검증 속도를 높이고 반복 작업 비용을 줄입니다.",
+      "AI 기반 코딩 도구를 설계, 구현, 디버깅, 검증에 적용해 반복 작업 비용을 줄이고 개발 속도를 높입니다.",
   },
 ];
 
@@ -99,9 +99,11 @@ export const experiences: ExperienceItem[] = [
     highlights: [
       "빠른정산 서비스 DB 설계 및 인프라 구축",
       "이커머스 마켓 및 PG사 데이터 스크래핑",
-      "정산데이터 정합 및 지급 시스템 개발",
+      "마켓별 정산데이터 정합 및 빠른정산 지급 시스템 개발",
       "홈택스 인증 모듈 및 증명서 스크래핑",
       "전자계약 API 연동",
+      "핀버 고객용 플랫폼 전반 개발 및 어드민 Utils 개발",
+      "휴대폰 수신 SMS 파싱 및 전송 Agent 앱 개발",
       "AI 어시스턴트 기반 에이전틱 개발 워크플로우 운영",
     ],
   },
@@ -112,9 +114,11 @@ export const experiences: ExperienceItem[] = [
     role: "Back-end Developer",
     highlights: [
       "이커머스 마켓 및 PG사 데이터 스크래핑",
+      "금융사 자금조달 시스템 작업",
       "선정산 지급 로직 개발",
       "SQL 성능 튜닝 및 쿼리 최적화",
       "홈택스 로그인 인증 및 증명서 스크래핑",
+      "전자계약서 API 연동",
       "고객용 페이지 리뉴얼 및 어드민 개발",
     ],
   },
@@ -130,29 +134,6 @@ export const experiences: ExperienceItem[] = [
       "사내 이슈관리 시스템 Redmine 구축",
     ],
   },
-  {
-    company: "바로마케팅",
-    project: "자동화/분석 플랫폼",
-    period: "2024.08 - 2025.02",
-    role: "Freelance Back-end Developer",
-    highlights: [
-      "API와 크롤링 기반 자동화 처리 시스템 구축",
-      "상품 경쟁력 분석 기능 설계",
-      "네이버 쇼핑 노출 최적화 상품명 생성 로직 구현",
-      "고객 관리 플랫폼 제작",
-    ],
-  },
-  {
-    company: "에너지맥스",
-    project: "기업 사이트 및 메일 시스템",
-    period: "2026.02 - 2026.03",
-    role: "Freelance Full-stack Developer",
-    highlights: [
-      "정적 기업 소개 웹사이트 설계 및 구축",
-      "AWS Lambda + SES 문의 메일 전송 시스템",
-      "Route53 및 Google Workspace DNS, 메일 환경 구성",
-    ],
-  },
 ];
 
 export const projects: ProjectItem[] = [
@@ -164,13 +145,13 @@ export const projects: ProjectItem[] = [
     role: "Back-end Developer",
     stack: ["Kotlin", "Spring Boot", "MariaDB", "Redis", "AWS", "Playwright"],
     summary:
-      "여러 마켓과 PG사의 데이터를 수집하고 정합하여 빠른정산 지급이 가능한 구조를 설계하고 구현했습니다.",
+      "여러 마켓과 PG사의 데이터를 수집·정합해 빠른정산 채권 근거를 만들고, 실제 지급 시스템과 고객용 플랫폼까지 연결한 서비스입니다.",
     problem:
       "정산 데이터는 출처별 포맷과 품질이 달라 그대로는 지급 시스템에 사용할 수 없었습니다. 지급을 위한 정합성과 추적 가능성이 동시에 필요했습니다.",
     implementation: [
-      "스크래핑 파이프라인과 정합 로직을 분리해 데이터 수집과 비즈니스 처리 단계를 명확히 나눴습니다.",
-      "정산 가능한 공통 구조를 설계해 마켓별 데이터 차이를 흡수했습니다.",
-      "홈택스 인증 및 증명서 스크래핑, 전자계약 연동 등 운영 절차까지 플랫폼 안으로 끌어왔습니다.",
+      "플랫폼별 인증 방식에 따라 API, HtmlUnit, 정적 파싱 전략을 분리해 스크래핑 안정성을 높였습니다.",
+      "정산 가능한 공통 구조를 설계해 광고비, 쿠폰, 성장장려금, 밀크런 등 상계 항목을 채권 가능 금액으로 변환했습니다.",
+      "홈택스 인증 및 증명서 스크래핑, 전자계약, SMS Agent 연동 등 운영 절차까지 플랫폼 안으로 끌어왔습니다.",
     ],
     outcome: [
       "데이터 신뢰성과 처리 효율을 함께 개선했습니다.",
@@ -191,7 +172,7 @@ export const projects: ProjectItem[] = [
     role: "Back-end Developer",
     stack: ["Java", "Spring Boot", "QueryDSL", "MariaDB", "JSP"],
     summary:
-      "선정산 지급 로직, 데이터 수집, SQL 최적화, 어드민 기능을 함께 다룬 운영형 플랫폼을 개발했습니다.",
+      "선정산 지급 로직, 데이터 수집, SQL 최적화, 홈택스/전자계약 연동까지 함께 다룬 운영형 플랫폼입니다.",
     problem:
       "선정산 로직은 데이터 정확성이 직접 비용으로 연결되며, 운영 단계에서 조회 성능과 내부 관리 도구가 함께 중요했습니다.",
     implementation: [
@@ -204,50 +185,6 @@ export const projects: ProjectItem[] = [
       "성능 병목을 줄이고 관리 효율을 높였습니다.",
     ],
     featureSlugs: ["sellerline-payout-rules", "query-optimization-admin", "hometax-auth-scraping"],
-  },
-  {
-    slug: "baromarketing-automation-platform",
-    title: "바로마케팅 자동화 플랫폼",
-    subtitle: "검색광고, 쇼핑 데이터를 수집하고 분석해 상품 노출 최적화로 연결한 플랫폼",
-    period: "2024.08 - 2025.02",
-    role: "Freelance Back-end Developer",
-    stack: ["Node.js", "Python", "MariaDB", "Naver API", "Selenium"],
-    summary:
-      "크롤링 및 API 데이터를 활용해 상품 경쟁력 분석과 자동화된 상품명 생성 기능을 제공하는 플랫폼을 구축했습니다.",
-    problem:
-      "상품 노출 최적화에는 검색광고, 쇼핑, 연관검색어처럼 서로 다른 데이터 출처를 함께 해석해야 했고, 이를 실행 가능한 기능으로 묶는 것이 필요했습니다.",
-    implementation: [
-      "네이버 개발자 센터 API와 검색광고 API를 연동했습니다.",
-      "키워드와 검색 데이터를 기준으로 상품 경쟁력 분석 흐름을 설계했습니다.",
-      "상품명 자동 생성 로직을 통해 실무 적용 가능한 자동화 기능을 제공했습니다.",
-    ],
-    outcome: [
-      "데이터 수집과 분석이 하나의 자동화 워크플로우로 연결됐습니다.",
-      "고객 관리 플랫폼과 결합해 운영 가능한 서비스 형태로 정리했습니다.",
-    ],
-    featureSlugs: ["naver-data-analysis", "product-title-generator"],
-  },
-  {
-    slug: "energymax-corporate-site",
-    title: "에너지맥스 기업 사이트",
-    subtitle: "정적 웹사이트와 서버리스 문의 메일 시스템을 결합한 저비용 운영 구조",
-    period: "2026.02 - 2026.03",
-    role: "Freelance Full-stack Developer",
-    stack: ["Next.js", "S3", "Lambda", "SES", "Route53", "CloudFront"],
-    summary:
-      "기업 소개 사이트와 문의 메일 기능을 서버리스 아키텍처로 설계해 운영 비용과 관리 부담을 줄였습니다.",
-    problem:
-      "정적인 소개 사이트이지만 실제 운영에서는 문의 메일, 도메인, 메일 환경까지 하나의 흐름으로 관리할 필요가 있었습니다.",
-    implementation: [
-      "S3 기반 정적 호스팅 구조를 설계했습니다.",
-      "Lambda + SES로 문의 메일 전송 기능을 분리했습니다.",
-      "Route53 및 Google Workspace DNS를 함께 구성했습니다.",
-    ],
-    outcome: [
-      "서버 운영 비용을 낮추고 관리 포인트를 줄였습니다.",
-      "프런트와 인프라를 함께 제어할 수 있는 구조를 만들었습니다.",
-    ],
-    featureSlugs: ["serverless-mail-system"],
   },
 ];
 
@@ -445,7 +382,7 @@ export const education = [
   "2022.05 - 2022.11 | KDT - POSCO 웹 개발 풀스택 양성 코스",
   "2021.06 - 2021.08 | FIT-JOB React 직무교육",
   "2021.04 - 2021.10 | KOREA IT ACADEMY 웹 개발자 백엔드 양성 코스",
-  "2018.03 - 2018.12 | Embassy English in London Upper-Intermediate",
+  "2018.03 - 2018.12 | Embassy English in London",
   "2012.03 - 2018.02 | 조선대학교 미술학과 시각문화큐레이터 전공",
 ];
 

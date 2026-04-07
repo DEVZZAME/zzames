@@ -1,30 +1,26 @@
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Github, Linkedin, Menu, Slash } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 
 const navItems = [
   { href: "/#about", label: "About" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Writing" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#career", label: "Career" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Link className="flex flex-col" href="/">
-          <span className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">
-            {siteConfig.name}
-          </span>
-          <span className="text-sm text-muted-foreground">{siteConfig.roleLabel}</span>
+    <header className="sticky top-0 z-40 border-b border-black/10 bg-white backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+        <Link className="text-2xl font-semibold uppercase tracking-[-0.08em] text-black" href="/">
+          DEV ZZAME
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <a
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="interactive-link text-[11px] font-semibold uppercase tracking-[0.25em] text-black/65 transition-colors hover:text-black"
               href={item.href}
               key={item.href}
             >
@@ -32,13 +28,31 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <ButtonLink href="/login" size="sm" variant="outline">
-            Admin
+        <div className="hidden md:flex md:items-center md:gap-5">
+          <Slash className="size-5 text-black" />
+          <a className="transition-transform duration-200 hover:-translate-y-0.5" href="https://www.linkedin.com/in/devzzame" rel="noreferrer" target="_blank">
+            <Linkedin className="size-4 text-black" />
+          </a>
+          <a className="transition-transform duration-200 hover:-translate-y-0.5" href={siteConfig.githubUrl} rel="noreferrer" target="_blank">
+            <Github className="size-4 text-black" />
+          </a>
+          <ButtonLink
+            className="hover-lift h-11 rounded-none border-2 border-black bg-white px-7 text-[11px] font-bold uppercase tracking-[0.22em] text-black hover:bg-black hover:text-white"
+            href="/projects"
+            size="sm"
+            variant="outline"
+          >
+            Resume
           </ButtonLink>
         </div>
         <div className="md:hidden">
-          <ButtonLink aria-label="Navigate" href="/blog" size="sm" variant="ghost">
+          <ButtonLink
+            aria-label="Navigate"
+            className="rounded-none border border-black/20 bg-white text-black"
+            href="/blog"
+            size="sm"
+            variant="outline"
+          >
             <Menu className="size-4" />
           </ButtonLink>
         </div>

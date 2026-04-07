@@ -1,0 +1,20 @@
+강한솔
+Back-end Developer
+
+생년월일
+1992. 04. 27
+
+연락처
+010.3649.4279
+
+거주지
+서울시 마포구
+
+깃허브
+github.com/DEVZZAME
+
+블로그
+velog.io/@dev_zzame
+
+이메일
+dev.zzame@gmail.com
