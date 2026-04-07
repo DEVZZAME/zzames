@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     images: [
       {
-        url: absoluteUrl("/opengraph-image"),
-        width: 1200,
-        height: 630,
+        url: absoluteUrl("/images/profile.png"),
+        width: 1024,
+        height: 1024,
         alt: siteConfig.title,
       },
     ],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [absoluteUrl("/opengraph-image")],
+    images: [absoluteUrl("/images/profile.png")],
   },
 };
 

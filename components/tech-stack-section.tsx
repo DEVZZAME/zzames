@@ -8,7 +8,55 @@ type TechStackSectionProps = {
   groups: StackGroup[];
 };
 
-const orderedCategories = ["Back-end", "Front-end", "Database", "Cloud/Infra", "Crawling", "CI/CD"] as const;
+const orderedCategories = ["Back-end", "Front-end", "Database", "Cloud/Infra", "Crawling"] as const;
+const iconBase = "https://cdn.simpleicons.org";
+const deviconBase = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
+
+const techIconMap: Record<string, string> = {
+  Java: `${deviconBase}/java/java-original.svg`,
+  "Spring Boot": `${iconBase}/springboot/111111?viewbox=auto&size=72`,
+  Kotlin: `${iconBase}/kotlin/111111?viewbox=auto&size=72`,
+  "Node.js": `${iconBase}/nodedotjs/111111?viewbox=auto&size=72`,
+  JWT: `${iconBase}/jsonwebtokens/111111?viewbox=auto&size=72`,
+  "Spring Security": `${iconBase}/springsecurity/111111?viewbox=auto&size=72`,
+  QueryDSL: `${iconBase}/graphql/111111?viewbox=auto&size=72`,
+  "JPA/Hibernate": `${iconBase}/hibernate/111111?viewbox=auto&size=72`,
+  "Redis(Redisson)": `${iconBase}/redis/111111?viewbox=auto&size=72`,
+  "Batch/Scheduler": `${iconBase}/apacheairflow/111111?viewbox=auto&size=72`,
+  HTML5: `${iconBase}/html5/111111?viewbox=auto&size=72`,
+  CSS3: `${iconBase}/css/111111?viewbox=auto&size=72`,
+  JS: `${iconBase}/javascript/111111?viewbox=auto&size=72`,
+  JSP: `${iconBase}/openjdk/111111?viewbox=auto&size=72`,
+  Thymeleaf: `${iconBase}/thymeleaf/111111?viewbox=auto&size=72`,
+  Flutter: `${iconBase}/flutter/111111?viewbox=auto&size=72`,
+  MySQL: `${iconBase}/mysql/111111?viewbox=auto&size=72`,
+  MariaDB: `${iconBase}/mariadb/111111?viewbox=auto&size=72`,
+  MongoDB: `${iconBase}/mongodb/111111?viewbox=auto&size=72`,
+  Redis: `${iconBase}/redis/111111?viewbox=auto&size=72`,
+  "AWS EC2": `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  ECS: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  ECR: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  RDS: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  S3: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  SES: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  SQS: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  ElastiCache: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  Route53: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  CloudFront: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  Lambda: `${deviconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  Selenium: `${iconBase}/selenium/111111?viewbox=auto&size=72`,
+  HtmlUnit: `${iconBase}/html5/111111?viewbox=auto&size=72`,
+  Playwright: `${iconBase}/googlechrome/111111?viewbox=auto&size=72`,
+  "Python 기반 스크래핑": `${iconBase}/python/111111?viewbox=auto&size=72`,
+  "Github Actions": `${iconBase}/githubactions/111111?viewbox=auto&size=72`,
+  Docker: `${iconBase}/docker/111111?viewbox=auto&size=72`,
+};
+
+const techIconOpacityMap: Record<string, { base: number; hover: number }> = {
+  Java: { base: 0.42, hover: 0.54 },
+  "Batch/Scheduler": { base: 0.4, hover: 0.52 },
+  MySQL: { base: 0.42, hover: 0.54 },
+};
 
 const categoryMeta: Record<
   string,
@@ -43,22 +91,22 @@ const categoryMeta: Record<
     description: "외부 플랫폼의 인증 흐름과 구조 차이를 고려해 안정적인 수집 파이프라인 설계",
     note: "마켓/PG사 데이터 수집과 인증 자동화에 활용한 크롤링 및 스크래핑 도구입니다.",
   },
-  "CI/CD": {
-    eyebrow: "Release // Operations",
-    description: "빌드부터 배포까지 반복 작업을 자동화해 운영 효율과 배포 일관성을 향상",
-    note: "배포 자동화와 컨테이너 기반 운영 흐름에 사용한 도구입니다.",
-  },
 };
 
 export function TechStackSection({ groups }: TechStackSectionProps) {
   const normalizedGroups = orderedCategories
     .map((category, index) => {
       const matched = groups.find((group) => group.category === category);
+      const cicd = groups.find((group) => group.category === "CI/CD");
+      const mergedItems =
+        category === "Cloud/Infra"
+          ? [...(matched?.items ?? []), ...(cicd?.items ?? [])]
+          : (matched?.items ?? []);
 
       return {
         order: index + 1,
         category,
-        items: matched?.items ?? [],
+        items: Array.from(new Set(mergedItems)),
       };
     })
     .filter((group) => group.items.length > 0);
@@ -84,15 +132,15 @@ export function TechStackSection({ groups }: TechStackSectionProps) {
         </h2>
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 gap-0 border-[3px] border-black md:grid-cols-3 lg:grid-cols-6 md:border-[4px]">
+      <div className="relative z-10 grid grid-cols-1 gap-0 border-[3px] border-black md:grid-cols-3 lg:grid-cols-5 md:border-[4px]">
         {normalizedGroups.map((group, index) => {
           const isActive = group.category === activeGroup.category;
 
           return (
             <button
-              className={`relative overflow-hidden border-black py-4 text-left transition-all duration-300 md:h-24 ${
-                index < groups.length - 1 ? "border-b-[3px] lg:border-b-0 lg:border-r-[4px]" : ""
-              } ${isActive ? "bg-black text-white" : "bg-white text-black hover:bg-gray-50"}`}
+              className={`relative cursor-pointer overflow-hidden border-black py-4 text-left transition-all duration-300 hover:scale-[1.02] md:h-24 ${
+                index < normalizedGroups.length - 1 ? "border-b-[3px] lg:border-b-0 lg:border-r-[4px]" : ""
+              } ${isActive ? "bg-black text-white" : "bg-white text-black hover:bg-black hover:text-white"}`}
               key={group.category}
               onClick={() => setSelectedCategory(group.category)}
               type="button"
@@ -129,20 +177,32 @@ export function TechStackSection({ groups }: TechStackSectionProps) {
           </div>
 
           <div className="grid grid-cols-2 gap-2 md:col-span-7 md:gap-3">
-            {activeGroup.items.map((item) => (
-              <div
-                className="group relative flex h-20 cursor-crosshair overflow-hidden border-[2px] border-black bg-white md:h-32 md:border-[3px]"
-                key={`${activeGroup.category}-${item}`}
-              >
-                <div className="absolute left-0 top-0 h-1 w-0 bg-red-600 transition-all duration-300 group-hover:w-full" />
-                <div className="absolute inset-0 bg-[radial-gradient(#000_0.8px,transparent_0)] bg-[size:12px_12px] opacity-[0.04]" />
-                <div className="relative z-10 flex h-full w-full items-end bg-white/40 p-3 transition-colors duration-300 group-hover:bg-black/90 md:p-4">
-                  <span className="text-base font-black tracking-tight text-black/82 transition-colors group-hover:text-white md:text-2xl">
-                    {item}
-                  </span>
+            {activeGroup.items.map((item) => {
+              const opacity = techIconOpacityMap[item] ?? { base: 0.28, hover: 0.4 };
+
+              return (
+                <div
+                  className="group relative flex h-20 cursor-crosshair overflow-hidden border-[2px] border-black bg-white md:h-32 md:border-[3px]"
+                  key={`${activeGroup.category}-${item}`}
+                >
+                  <div className="absolute left-0 top-0 h-1 w-0 bg-red-600 transition-all duration-300 group-hover:w-full" />
+                  <div
+                    className="absolute inset-0 bg-center bg-no-repeat grayscale transition-all duration-300 group-hover:scale-110 group-hover:opacity-[0.4]"
+                    style={{
+                      backgroundImage: techIconMap[item] ? `url('${techIconMap[item]}')` : undefined,
+                      backgroundSize: "64px 64px",
+                      opacity: opacity.base,
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-[radial-gradient(#000_0.8px,transparent_0)] bg-[size:12px_12px] opacity-[0.04]" />
+                  <div className="relative z-10 flex h-full w-full items-end bg-white/40 p-3 transition-colors duration-300 group-hover:bg-black/90 md:p-4">
+                    <span className="text-base font-black tracking-tight text-black/82 transition-colors group-hover:text-white md:text-2xl">
+                      {item}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

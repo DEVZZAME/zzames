@@ -21,7 +21,7 @@ export function buildMetadata({
   description,
   path = "/",
   type = "website",
-  imagePath = "/opengraph-image",
+  imagePath = "/images/profile.png",
   keywords = [],
 }: BuildMetadataInput): Metadata {
   const url = absoluteUrl(path);
@@ -44,8 +44,8 @@ export function buildMetadata({
       images: [
         {
           url: image,
-          width: 1200,
-          height: 630,
+          width: 1024,
+          height: 1024,
           alt: title,
         },
       ],

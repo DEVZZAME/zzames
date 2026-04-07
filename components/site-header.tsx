@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Menu, Slash } from "lucide-react";
 
@@ -11,11 +15,14 @@ const navItems = [
 ];
 
 export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-white backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
-        <Link className="text-2xl font-semibold uppercase tracking-[-0.08em] text-black" href="/">
-          DEV ZZAME
+        <Link className="flex items-center gap-3 text-2xl font-semibold uppercase tracking-[-0.08em] text-black" href="/">
+          <Image alt="DEV ZZAME logo" className="rounded-full border border-black/10" height={36} src="/brand/logo.png" width={36} />
+          <span>DEV ZZAME</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
@@ -46,17 +53,33 @@ export function SiteHeader() {
           </ButtonLink>
         </div>
         <div className="md:hidden">
-          <ButtonLink
-            aria-label="Navigate"
-            className="rounded-none border border-black/20 bg-white text-black"
-            href="/blog"
-            size="sm"
-            variant="outline"
+          <button
+            aria-expanded={open}
+            aria-label="Toggle navigation"
+            className="inline-flex h-9 items-center justify-center rounded-none border border-black/20 bg-white px-3 text-black"
+            onClick={() => setOpen((value) => !value)}
+            type="button"
           >
             <Menu className="size-4" />
-          </ButtonLink>
+          </button>
         </div>
       </div>
+      {open ? (
+        <div className="border-t border-black/10 bg-white md:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-6 py-3">
+            {navItems.map((item) => (
+              <a
+                className="py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-black/70 transition-colors hover:text-black"
+                href={item.href}
+                key={item.href}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      ) : null}
     </header>
   );
 }

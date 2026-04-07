@@ -10,8 +10,6 @@ import {
 import { CareerSection } from "@/components/career-section";
 import { ProjectSection } from "@/components/project-section";
 import { TechStackSection } from "@/components/tech-stack-section";
-import { ButtonLink } from "@/components/ui/button";
-import { profile } from "@/lib/portfolio-data";
 import {
   getAboutProfile,
   getCareerBlocks,
@@ -23,7 +21,7 @@ import {
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "강한솔 | 데이터 흐름을 설계하는 백엔드 개발자",
+  title: "개발자 솔짜미|DEV ZZAME",
   description:
     "정산, 스크래핑, 플랫폼 운영, 서버리스 인프라까지 데이터 흐름을 설계하고 서비스로 구현하는 강한솔의 포트폴리오.",
   path: "/",
@@ -67,8 +65,8 @@ export default async function Home() {
     <div className="space-y-8 pb-16">
       <section className="relative left-1/2 w-[calc(100vw-0.5rem)] -translate-x-1/2 overflow-hidden border-[5px] border-black bg-white text-black md:w-[calc(100vw-0.75rem)]">
         <div className="mx-auto max-w-7xl">
-          <div className="grid min-h-[640px] gap-6 md:grid-cols-[1.02fr_0.98fr]">
-            <div className="relative z-10 flex flex-col justify-between gap-10 px-4 py-5 md:px-8 md:py-8">
+          <div className="grid min-h-[640px] gap-6 xl:grid-cols-[1.02fr_0.98fr]">
+            <div className="relative z-10 flex flex-col justify-between gap-4 px-4 pb-1 pt-5 sm:gap-10 sm:pb-2 md:px-8 md:py-8">
               <div className="space-y-4">
                 <p className="reveal-up text-[10px] font-semibold uppercase tracking-[0.32em] text-black/38">
                   Web Back-end Developer
@@ -90,25 +88,14 @@ export default async function Home() {
                   </div>
                 </div>
               </div>
-              <div className="reveal-up reveal-delay-3 flex items-end gap-6">
-                <div className="hidden h-24 w-px bg-black/25 md:block" />
-                <p className="scroll-cue text-[10px] font-semibold uppercase tracking-[0.32em] text-black/34 [writing-mode:vertical-rl]">
-                  Keep Scrolling
-                </p>
-                <ButtonLink
-                  className="hover-lift rounded-none bg-black px-5 text-xs font-bold uppercase tracking-[0.18em] text-white hover:bg-black/85"
-                  href={`mailto:${profile.email}`}
-                >
-                  Contact
-                </ButtonLink>
-              </div>
+              <div />
             </div>
 
             <div className="relative z-10 flex items-end justify-center">
-              <div className="reveal-up reveal-delay-2 flex h-[350px] w-full max-w-[620px] items-end justify-center overflow-hidden md:h-[560px]">
+              <div className="reveal-up reveal-delay-2 aspect-[3/2] min-w-[370px] w-[calc(100vw-10px)] items-end justify-center overflow-hidden md:flex md:aspect-auto md:h-[560px] md:min-w-[575px] md:w-full md:max-w-[620px] xl:min-w-0">
                 <img
                   alt="강한솔 프로필 사진"
-                  className="block h-auto max-h-full w-auto max-w-none self-end object-contain object-bottom grayscale"
+                  className="block h-full min-w-[370px] w-full self-end object-contain object-bottom grayscale md:min-w-[575px] xl:min-w-0"
                   src="/images/profile.png"
                 />
               </div>
