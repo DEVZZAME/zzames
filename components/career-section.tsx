@@ -36,7 +36,7 @@ export function CareerSection({ blocks }: CareerSectionProps) {
 
     return (
       <div
-        className="group flex min-h-[320px] flex-col justify-between bg-stone-950 p-6 transition-all duration-500 md:min-h-0 md:p-8"
+        className="group flex h-full min-h-[320px] flex-col justify-between bg-stone-950 p-6 transition-all duration-500 md:min-h-0 md:p-8"
         key={`${block.title}-${block.period}`}
       >
         <div className="mb-8 md:mb-12">
@@ -101,8 +101,23 @@ export function CareerSection({ blocks }: CareerSectionProps) {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-px border-2 border-stone-800 bg-stone-800 lg:grid-cols-3">
-        {primaryBlocks.map((block, index) => renderCard(block, index))}
+      <div className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-3">
+        <div className="relative h-full border-2 border-stone-800 bg-stone-800 p-px lg:col-span-2">
+          <div className="pointer-events-none absolute left-4 top-4 z-10 max-w-[260px] bg-stone-950/88 px-3 py-2 backdrop-blur-sm">
+            <p className="text-[8px] font-black uppercase tracking-[0.2em] text-stone-500 md:text-[9px]">
+              Corporate History
+            </p>
+            <p className="mt-1 text-[10px] leading-relaxed text-stone-300 md:text-xs">
+              에스씨엠솔루션이 퍼스트밸류로 법인을 변경하며 핀버라는 서비스로 피벗했습니다.
+            </p>
+          </div>
+          <div className="grid h-full grid-cols-1 gap-px bg-stone-800 md:grid-cols-2">
+            {primaryBlocks.slice(0, 2).map((block, index) => renderCard(block, index))}
+          </div>
+        </div>
+        <div className="h-full border-2 border-stone-800 bg-stone-800 p-px">
+          {primaryBlocks[2] ? renderCard(primaryBlocks[2], 2) : null}
+        </div>
       </div>
 
       {extraBlocks.length > 0 ? (
