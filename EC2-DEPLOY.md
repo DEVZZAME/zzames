@@ -193,7 +193,53 @@ npm run build
 pm2 restart zzames
 ```
 
-## 13. 문제 해결
+## 13. GitHub Actions CI/CD
+
+프로젝트에는 이제 GitHub Actions 워크플로가 포함되어 있습니다.
+
+- CI: `.github/workflows/ci.yml`
+  - PR / `main` push 시 `npm ci`, `prisma generate`, `lint`, `build`
+- CD: `.github/workflows/deploy.yml`
+  - `main` push 시 EC2에 SSH 접속 후 자동 배포
+
+EC2 자동 배포 전에 GitHub 저장소 `Settings > Secrets and variables > Actions`에 아래 값을 등록해야 합니다.
+
+### 필수 Secrets
+
+- `EC2_HOST`
+- `EC2_PORT`
+- `EC2_USER`
+- `EC2_SSH_KEY`
+- `EC2_APP_DIR`
+- `DATABASE_ENABLED`
+- `DATABASE_URL`
+- `NEXTAUTH_SECRET`
+- `NEXTAUTH_URL`
+- `ADMIN_EMAIL`
+- `ADMIN_PASSWORD`
+
+### 예시 값
+
+- `EC2_HOST`: `12.34.56.78`
+- `EC2_PORT`: `22`
+- `EC2_USER`: `ubuntu`
+- `EC2_APP_DIR`: `/var/www/zzames`
+- `EC2_SSH_KEY`: EC2 접속용 private key 전체 내용
+
+`main` 브랜치에 push 하면 GitHub Actions가:
+
+1. EC2에 SSH 접속
+2. `.env.local` 갱신
+3. `git pull --ff-only origin main`
+4. `npm ci`
+5. `npm run prisma:generate`
+6. `npx prisma db push`
+7. `npm run build`
+8. `pm2 restart zzames --update-env`
+
+를 자동으로 실행합니다.
+
+## 14. 문제 해결
 
 ### 앱이 안 뜰 때
 

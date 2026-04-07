@@ -40,3 +40,4 @@ ADMIN_PASSWORD="replace-this-password"
 - `next.config.ts`는 `output: "standalone"`으로 설정되어 있어 컨테이너 기반 배포에도 대응합니다.
 - EC2 배포 절차는 [EC2-DEPLOY.md](./EC2-DEPLOY.md)를 참고합니다.
 - PM2 실행 설정은 [ecosystem.config.js](./ecosystem.config.js), Nginx 샘플은 [deploy.nginx.conf](./deploy.nginx.conf)에 있습니다.
+- GitHub Actions CI/CD는 [.github/workflows/ci.yml](./.github/workflows/ci.yml), [.github/workflows/deploy.yml](./.github/workflows/deploy.yml), [scripts/deploy-remote.sh](./scripts/deploy-remote.sh)에 있습니다.
