@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { CareerSection } from "@/components/career-section";
+import { HomeScrollEffects } from "@/components/home-scroll-effects";
 import { ProjectSection } from "@/components/project-section";
 import { TechStackSection } from "@/components/tech-stack-section";
 import {
@@ -22,8 +23,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "개발자 솔짜미|DEV ZZAME",
-  description:
-    "정산, 스크래핑, 플랫폼 운영, 서버리스 인프라까지 데이터 흐름을 설계하고 서비스로 구현하는 강한솔의 포트폴리오.",
+  description: "웹 풀스택 개발자 강한솔의 개인 홈페이지 입니다.",
   path: "/",
   keywords: ["정산 시스템", "스크래핑", "홈택스", "MSA", "플랫폼 운영"],
 });
@@ -37,11 +37,11 @@ export default async function Home() {
   const stackGroups = await getStackGroups();
   const careerIcons = [DatabaseZap, Workflow, ShieldCheck, BriefcaseBusiness, FileText];
   const projectPreviewImages = [
-    "https://picsum.photos/seed/zzames-project-1/1200/800",
-    "https://picsum.photos/seed/zzames-project-2/1200/800",
-    "https://picsum.photos/seed/zzames-project-3/1200/800",
-    "https://picsum.photos/seed/zzames-project-4/1200/800",
-    "https://picsum.photos/seed/zzames-project-5/1200/800",
+    "/images/projects/project-1.svg",
+    "/images/projects/project-2.svg",
+    "/images/projects/project-3.svg",
+    "/images/projects/project-4.svg",
+    "/images/projects/project-5.svg",
   ];
   const splitEducationTitle = (title: string) => {
     const words = title.split(" ");
@@ -63,13 +63,17 @@ export default async function Home() {
 
   return (
     <div className="space-y-8 pb-16">
-      <section className="relative left-1/2 w-[calc(100vw-0.5rem)] -translate-x-1/2 overflow-hidden border-[5px] border-black bg-white text-black md:w-[calc(100vw-0.75rem)]">
+      <HomeScrollEffects />
+      <section
+        className="relative left-1/2 w-[calc(100vw-0.5rem)] -translate-x-1/2 overflow-hidden border-[5px] border-black bg-white text-black md:w-[calc(100vw-0.75rem)]"
+        data-hero-section
+      >
         <div className="mx-auto max-w-7xl">
           <div className="grid min-h-[640px] gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-            <div className="relative z-10 flex flex-col justify-between gap-4 px-4 pb-1 pt-5 sm:gap-10 sm:pb-2 md:px-8 md:py-8">
+            <div className="relative z-10 flex flex-col justify-between gap-4 px-4 pb-1 pt-5 sm:gap-10 sm:pb-2 md:px-8 md:py-8" data-hero-copy>
               <div className="space-y-4">
                 <p className="reveal-up text-[10px] font-semibold uppercase tracking-[0.32em] text-black/38">
-                  Web Back-end Developer
+                  Fullstack Developer
                 </p>
                 <h1 className="reveal-up reveal-delay-1 max-w-4xl text-5xl font-black uppercase leading-[0.86] tracking-[-0.08em] md:text-[8.5rem]">
                   Hi, I&apos;m
@@ -78,7 +82,7 @@ export default async function Home() {
                 </h1>
                 <div className="reveal-up reveal-delay-2 flex flex-wrap items-center gap-4 pt-1">
                   <span className="hover-lift bg-black px-4 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white">
-                    Data-driven Backend
+                    Data-driven Fullstack
                   </span>
                   <div className="space-y-1">
                     <p className="text-lg text-black/52">SETTLEMENT, SCRAPING, AUTOMATION, PLATFORM OPS</p>
@@ -91,11 +95,11 @@ export default async function Home() {
               <div />
             </div>
 
-            <div className="relative z-10 flex items-end justify-center">
-              <div className="reveal-up reveal-delay-2 aspect-[3/2] min-w-[370px] w-[calc(100vw-10px)] items-end justify-center overflow-hidden md:flex md:aspect-auto md:h-[560px] md:min-w-[575px] md:w-full md:max-w-[620px] xl:min-w-0">
+            <div className="relative z-10 flex items-end justify-center" data-hero-media>
+              <div className="reveal-right reveal-delay-2 aspect-[3/2] min-w-[370px] w-[calc(100vw-10px)] items-end justify-center overflow-hidden md:flex md:aspect-auto md:h-[560px] md:min-w-[575px] md:w-full md:max-w-[620px] xl:min-w-0">
                 <img
                   alt="강한솔 프로필 사진"
-                  className="block h-full min-w-[370px] w-full self-end object-contain object-bottom grayscale md:min-w-[575px] xl:min-w-0"
+                  className="media-zoom block h-full min-w-[370px] w-full self-end object-contain object-bottom grayscale md:min-w-[575px] xl:min-w-0"
                   src="/images/profile.png"
                 />
               </div>
@@ -105,13 +109,14 @@ export default async function Home() {
       </section>
 
       <section
-        className="relative mx-auto max-w-7xl scroll-mt-28 overflow-hidden border border-black/10 bg-white px-4 py-8 text-black md:px-6 md:py-10"
+        className="reveal-scale stagger-1 relative mx-auto max-w-7xl scroll-mt-28 overflow-hidden border border-black/10 bg-white px-4 py-8 text-black md:px-6 md:py-10"
+        data-scroll-section
         id="about"
       >
         <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="space-y-6 border-b border-black/10 pb-8 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-10">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/35">About // Profile Overview</p>
-            <div className="space-y-3">
+            <div className="space-y-3" data-scroll-title>
               <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-black italic sm:text-6xl md:text-[5rem]">
                 About
               </h2>
@@ -123,13 +128,13 @@ export default async function Home() {
               </div>
             </div>
             <p className="max-w-md border-l-2 border-black/20 pl-4 text-sm leading-7 text-black/58">
-              정산, 자동화, 데이터 수집, 운영 시스템 구축을 중심으로 실서비스 문제를 해결해 온 백엔드 개발자입니다.
+              정산, 자동화, 데이터 수집, 운영 시스템 구축을 중심으로 실서비스 문제를 해결해 온 풀스택 개발자입니다.
             </p>
           </div>
 
           <div className="grid gap-px border border-black/10 bg-black/10 sm:grid-cols-2">
             {aboutProfile.items.map((item, index) => (
-              <div className="bg-white p-5 md:p-6" key={`${item.label}-${item.value}`}>
+              <div className="panel-hover bg-white p-5 md:p-6" data-scroll-card key={`${item.label}-${item.value}`}>
                 <p className="mb-3 text-[10px] font-black uppercase tracking-[0.24em] text-black/35">
                   Field // {String(index + 1).padStart(2, "0")}
                 </p>
@@ -147,12 +152,12 @@ export default async function Home() {
 
       <TechStackSection groups={stackGroups} />
 
-      <section className="relative mx-auto max-w-7xl overflow-hidden border border-white/10 bg-[#0a0a0a] px-4 py-8 text-white md:px-6 md:py-12">
+      <section className="reveal-scale stagger-2 relative mx-auto max-w-7xl overflow-hidden border border-white/10 bg-[#0a0a0a] px-4 py-8 text-white md:px-6 md:py-12" data-scroll-section>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.07),transparent_35%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_55%)]" />
         <div className="relative z-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-6 border-b border-white/10 pb-8 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-10">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/34">Education Log // 2026</p>
-            <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white md:text-[5rem]">
+            <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white md:text-[5rem]" data-scroll-title>
               Education
               <span className="block text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.42)]">
                 Archive
@@ -171,7 +176,8 @@ export default async function Home() {
 
                 return (
               <article
-                className="group grid gap-5 bg-[#050505] p-5 transition-colors duration-300 hover:bg-[#0d0d0d] md:grid-cols-[180px_1fr] md:p-7"
+                className="panel-hover group grid gap-5 bg-[#050505] p-5 transition-colors duration-300 hover:bg-[#0d0d0d] md:grid-cols-[180px_1fr] md:p-7"
+                data-scroll-card
                 key={`${block.period}-${block.title}`}
               >
                 <div className="space-y-3">
@@ -206,7 +212,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-7xl overflow-hidden bg-stone-950 px-4 py-7 font-sans sm:px-6 md:py-10">
+      <section className="reveal-scale stagger-3 relative mx-auto max-w-7xl overflow-hidden bg-stone-950 px-4 py-7 font-sans sm:px-6 md:py-10" data-scroll-section>
         <div className="relative mb-8 border-b border-stone-800 pb-6">
           <div className="mb-4 flex items-center gap-3 md:mb-6">
             <BriefcaseBusiness className="size-4 text-stone-500" />
@@ -214,7 +220,7 @@ export default async function Home() {
               Etc Career // Visual_Production // 2026
             </span>
           </div>
-          <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white italic sm:text-6xl md:text-[5rem]">
+          <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white italic sm:text-6xl md:text-[5rem]" data-scroll-title>
             Extra
             <span className="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.42)]"> Track</span>
           </h2>
@@ -226,7 +232,8 @@ export default async function Home() {
 
             return (
               <div
-                className="group flex min-h-[280px] flex-col justify-between bg-stone-950 p-6 transition-all duration-500 md:p-8"
+                className="panel-hover group flex min-h-[280px] flex-col justify-between bg-stone-950 p-6 transition-all duration-500 md:p-8"
+                data-scroll-card
                 key={`${block.title}-${block.period}`}
               >
                 <div className="space-y-6">

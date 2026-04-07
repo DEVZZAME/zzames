@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
                 color: "#4d6177",
               }}
             >
-              Back-end Developer Portfolio
+              Fullstack Developer Portfolio
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div style={{ fontSize: "62px", fontWeight: 700, lineHeight: 1.1 }}>

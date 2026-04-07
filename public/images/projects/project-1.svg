@@ -1,0 +1,25 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F3F0EA"/>
+  <rect x="70" y="80" width="1060" height="640" rx="24" fill="#111111"/>
+  <rect x="110" y="130" width="420" height="260" rx="18" fill="#1E1E1E" stroke="#363636" stroke-width="4"/>
+  <rect x="145" y="170" width="210" height="18" rx="9" fill="#F3F0EA" fill-opacity="0.85"/>
+  <rect x="145" y="210" width="330" height="12" rx="6" fill="#B9B1A6"/>
+  <rect x="145" y="238" width="280" height="12" rx="6" fill="#7C756D"/>
+  <rect x="145" y="286" width="92" height="70" rx="12" fill="#D9D0C5"/>
+  <rect x="251" y="286" width="92" height="70" rx="12" fill="#C7BEB3"/>
+  <rect x="357" y="286" width="118" height="70" rx="12" fill="#B2AAA0"/>
+  <rect x="575" y="130" width="515" height="260" rx="18" fill="#F3F0EA"/>
+  <rect x="620" y="180" width="110" height="110" rx="18" fill="#111111"/>
+  <rect x="761" y="180" width="110" height="110" rx="18" fill="#2B2B2B"/>
+  <rect x="902" y="180" width="110" height="110" rx="18" fill="#505050"/>
+  <path d="M190 529H438" stroke="#F3F0EA" stroke-width="8" stroke-linecap="round"/>
+  <path d="M190 575H382" stroke="#9E9589" stroke-width="8" stroke-linecap="round"/>
+  <path d="M190 621H330" stroke="#6E675F" stroke-width="8" stroke-linecap="round"/>
+  <rect x="590" y="455" width="450" height="172" rx="24" fill="#171717" stroke="#3A3A3A" stroke-width="4"/>
+  <path d="M655 560C698.5 474 764.5 470 810 536C855.5 602 932.5 600 975 510" stroke="#F3F0EA" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="655" cy="560" r="16" fill="#F3F0EA"/>
+  <circle cx="810" cy="536" r="16" fill="#D8CFC3"/>
+  <circle cx="975" cy="510" r="16" fill="#B5ADA2"/>
+  <text x="110" y="455" fill="#F3F0EA" font-family="Arial, sans-serif" font-size="58" font-weight="700">SCRAPING</text>
+  <text x="110" y="515" fill="#8D857A" font-family="Arial, sans-serif" font-size="58" font-weight="700">SYSTEM</text>
+</svg>

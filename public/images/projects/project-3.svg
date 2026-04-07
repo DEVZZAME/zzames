@@ -1,0 +1,16 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F6F2EC"/>
+  <rect x="84" y="84" width="1032" height="632" rx="30" fill="#111111"/>
+  <rect x="138" y="144" width="430" height="512" rx="24" fill="#F6F2EC"/>
+  <rect x="188" y="208" width="220" height="22" rx="11" fill="#141414"/>
+  <rect x="188" y="254" width="310" height="16" rx="8" fill="#AAA196"/>
+  <rect x="188" y="288" width="270" height="16" rx="8" fill="#CFC7BC"/>
+  <rect x="188" y="360" width="330" height="210" rx="24" fill="#E3DBD0"/>
+  <path d="M672 198H1019" stroke="#F6F2EC" stroke-width="10" stroke-linecap="round"/>
+  <path d="M672 252H952" stroke="#9B9387" stroke-width="10" stroke-linecap="round"/>
+  <rect x="690" y="330" width="320" height="250" rx="30" fill="#1A1A1A" stroke="#353535" stroke-width="4"/>
+  <path d="M842 392C865 362 907 352 948 380C988 408 996 455 968 493C941 532 885 554 842 591C799 554 743 532 716 493C688 455 696 408 736 380C777 352 819 362 842 392Z" fill="#F6F2EC"/>
+  <rect x="710" y="622" width="220" height="20" rx="10" fill="#F6F2EC"/>
+  <text x="140" y="132" fill="#8B8377" font-family="Arial, sans-serif" font-size="44" font-weight="700">HOMETAX</text>
+  <text x="140" y="176" fill="#F6F2EC" font-family="Arial, sans-serif" font-size="44" font-weight="700">AUTH FLOW</text>
+</svg>

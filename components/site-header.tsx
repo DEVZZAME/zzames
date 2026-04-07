@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Menu, Slash } from "lucide-react";
 
+import { SiteStackModal } from "@/components/site-stack-modal";
 import { ButtonLink } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 
@@ -36,6 +37,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden md:flex md:items-center md:gap-5">
+          <SiteStackModal className="interactive-link text-[11px] font-semibold uppercase tracking-[0.25em] text-black/65 transition-colors hover:text-black" />
           <Slash className="size-5 text-black" />
           <a className="transition-transform duration-200 hover:-translate-y-0.5" href="https://www.linkedin.com/in/devzzame" rel="noreferrer" target="_blank">
             <Linkedin className="size-4 text-black" />
@@ -77,6 +79,9 @@ export function SiteHeader() {
                 {item.label}
               </a>
             ))}
+            <div className="py-3">
+              <SiteStackModal className="text-[11px] font-semibold uppercase tracking-[0.25em] text-black/70 transition-colors hover:text-black" />
+            </div>
           </nav>
         </div>
       ) : null}

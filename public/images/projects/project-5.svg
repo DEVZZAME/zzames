@@ -1,0 +1,21 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F4F0E8"/>
+  <rect x="80" y="80" width="1040" height="640" rx="28" fill="#101010"/>
+  <rect x="130" y="138" width="285" height="220" rx="22" fill="#F4F0E8"/>
+  <rect x="458" y="138" width="285" height="220" rx="22" fill="#F4F0E8"/>
+  <rect x="786" y="138" width="285" height="220" rx="22" fill="#F4F0E8"/>
+  <path d="M415 248H458" stroke="#F4F0E8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M743 248H786" stroke="#F4F0E8" stroke-width="10" stroke-linecap="round"/>
+  <rect x="168" y="190" width="146" height="16" rx="8" fill="#151515"/>
+  <rect x="495" y="190" width="146" height="16" rx="8" fill="#151515"/>
+  <rect x="823" y="190" width="146" height="16" rx="8" fill="#151515"/>
+  <rect x="168" y="236" width="184" height="12" rx="6" fill="#B0A89C"/>
+  <rect x="495" y="236" width="184" height="12" rx="6" fill="#B0A89C"/>
+  <rect x="823" y="236" width="184" height="12" rx="6" fill="#B0A89C"/>
+  <rect x="130" y="430" width="940" height="210" rx="28" fill="#171717" stroke="#333333" stroke-width="4"/>
+  <path d="M240 546H960" stroke="#F4F0E8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M240 594H720" stroke="#8C8478" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="183" cy="546" r="18" fill="#F4F0E8"/>
+  <circle cx="183" cy="594" r="18" fill="#C8C0B5"/>
+  <text x="130" y="412" fill="#F4F0E8" font-family="Arial, sans-serif" font-size="50" font-weight="700">MONOLITH TO MSA</text>
+</svg>

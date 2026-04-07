@@ -1,5 +1,5 @@
 강한솔
-Back-end Developer
+Fullstack Developer
 
 생년월일
 1992. 04. 27

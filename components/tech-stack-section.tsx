@@ -120,9 +120,9 @@ export function TechStackSection({ groups }: TechStackSectionProps) {
   }
 
   return (
-    <section className="relative mx-auto max-w-7xl overflow-hidden bg-white px-4 py-8 text-black md:px-6 md:py-16">
+    <section className="reveal-scale stagger-3 relative mx-auto max-w-7xl overflow-hidden bg-white px-4 py-8 text-black md:px-6 md:py-16" data-scroll-section>
       <div className="mb-8 flex flex-col items-start border-l-[8px] border-black pl-5 md:border-l-[12px] md:pl-8">
-        <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight italic text-black sm:text-6xl md:text-[5rem]">
+        <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight italic text-black sm:text-6xl md:text-[5rem]" data-scroll-title>
           Tech
           <br className="md:hidden" />
           <span className="text-transparent [-webkit-text-stroke:1px_rgba(0,0,0,0.55)] md:[-webkit-text-stroke:1.5px_rgba(0,0,0,0.55)]">
@@ -182,7 +182,8 @@ export function TechStackSection({ groups }: TechStackSectionProps) {
 
               return (
                 <div
-                  className="group relative flex h-20 cursor-crosshair overflow-hidden border-[2px] border-black bg-white md:h-32 md:border-[3px]"
+                  className="panel-hover group relative flex h-20 cursor-crosshair overflow-hidden border-[2px] border-black bg-white md:h-32 md:border-[3px]"
+                  data-scroll-card
                   key={`${activeGroup.category}-${item}`}
                 >
                   <div className="absolute left-0 top-0 h-1 w-0 bg-red-600 transition-all duration-300 group-hover:w-full" />

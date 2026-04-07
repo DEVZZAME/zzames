@@ -1,0 +1,17 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F3EFE8"/>
+  <rect x="95" y="88" width="1010" height="624" rx="32" fill="#121212"/>
+  <rect x="150" y="140" width="420" height="510" rx="28" fill="#F3EFE8"/>
+  <rect x="205" y="210" width="200" height="20" rx="10" fill="#131313"/>
+  <rect x="205" y="258" width="290" height="14" rx="7" fill="#ACA397"/>
+  <rect x="205" y="290" width="260" height="14" rx="7" fill="#CDC5BA"/>
+  <rect x="205" y="348" width="308" height="132" rx="18" fill="#E4DBD0"/>
+  <path d="M232 560C300 526 339 603 415 562" stroke="#131313" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="789" cy="264" r="86" fill="#F3EFE8"/>
+  <path d="M752 264L780 292L834 238" stroke="#111111" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="664" y="406" width="285" height="170" rx="24" fill="#1A1A1A" stroke="#3D3D3D" stroke-width="4"/>
+  <rect x="704" y="456" width="206" height="18" rx="9" fill="#F3EFE8"/>
+  <rect x="704" y="498" width="144" height="18" rx="9" fill="#B8AFA4"/>
+  <text x="648" y="140" fill="#F3EFE8" font-family="Arial, sans-serif" font-size="54" font-weight="700">E-CONTRACT</text>
+  <text x="648" y="626" fill="#8F877C" font-family="Arial, sans-serif" font-size="42" font-weight="700">SIGN &amp; AUTOMATE</text>
+</svg>

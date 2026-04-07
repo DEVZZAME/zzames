@@ -1,0 +1,21 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F4F0EA"/>
+  <rect x="120" y="70" width="960" height="660" rx="34" fill="#141414"/>
+  <rect x="200" y="120" width="300" height="560" rx="36" fill="#0D0D0D" stroke="#373737" stroke-width="6"/>
+  <rect x="230" y="180" width="240" height="340" rx="18" fill="#F4F0EA"/>
+  <rect x="255" y="215" width="120" height="22" rx="11" fill="#161616"/>
+  <rect x="255" y="258" width="185" height="14" rx="7" fill="#A69F95"/>
+  <rect x="255" y="288" width="150" height="14" rx="7" fill="#CAC2B8"/>
+  <rect x="255" y="350" width="165" height="92" rx="18" fill="#DDD4C9"/>
+  <path d="M610 228H983" stroke="#F4F0EA" stroke-width="10" stroke-linecap="round"/>
+  <path d="M610 284H910" stroke="#9F978D" stroke-width="10" stroke-linecap="round"/>
+  <path d="M610 338H853" stroke="#71695F" stroke-width="10" stroke-linecap="round"/>
+  <rect x="610" y="412" width="410" height="200" rx="26" fill="#F4F0EA"/>
+  <rect x="660" y="462" width="126" height="100" rx="18" fill="#151515"/>
+  <rect x="813" y="462" width="157" height="100" rx="18" fill="#393939"/>
+  <circle cx="907" cy="512" r="34" fill="#F4F0EA"/>
+  <path d="M692 628H968" stroke="#F4F0EA" stroke-width="8" stroke-linecap="round"/>
+  <path d="M692 664H888" stroke="#B9B0A5" stroke-width="8" stroke-linecap="round"/>
+  <text x="586" y="158" fill="#F4F0EA" font-family="Arial, sans-serif" font-size="56" font-weight="700">SMS AGENT</text>
+  <text x="586" y="708" fill="#8C8378" font-family="Arial, sans-serif" font-size="44" font-weight="700">ANDROID AUTOMATION</text>
+</svg>

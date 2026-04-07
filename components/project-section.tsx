@@ -34,12 +34,13 @@ export function ProjectSection({ projects, previewImages }: ProjectSectionProps)
 
   return (
     <section
-      className="relative mx-auto mt-16 max-w-7xl scroll-mt-28 overflow-x-hidden bg-[#0a0a0a] md:mt-32"
+      className="reveal-scale stagger-2 relative mx-auto mt-16 max-w-7xl scroll-mt-28 overflow-x-hidden bg-[#0a0a0a] md:mt-32"
+      data-scroll-section
       id="projects"
       ref={sectionRef}
     >
       <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end">
-        <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white italic sm:text-6xl md:text-[5rem]">
+        <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white italic sm:text-6xl md:text-[5rem]" data-scroll-title>
           Active
           <br />
           <span className="text-white/8 [-webkit-text-stroke:1px_rgba(255,255,255,0.45)] md:[-webkit-text-stroke:1.5px_rgba(255,255,255,0.45)]">
@@ -54,11 +55,11 @@ export function ProjectSection({ projects, previewImages }: ProjectSectionProps)
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 lg:grid-cols-3">
         {primaryProjects.map((project, index) => (
           <Link className="group block h-full" href={`/projects/${project.slug}`} key={project.slug}>
-            <div className="relative flex h-full min-h-[420px] flex-col border-[3px] border-black bg-white p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all group-hover:translate-x-[3px] group-hover:translate-y-[3px] group-hover:shadow-none md:min-h-[448px] md:border-[4px] md:p-6 md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:group-hover:translate-x-[4px] md:group-hover:translate-y-[4px]">
+            <div className="panel-hover relative flex h-full min-h-[420px] flex-col border-[3px] border-black bg-white p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all group-hover:translate-x-[3px] group-hover:translate-y-[3px] group-hover:shadow-none md:min-h-[448px] md:border-[4px] md:p-6 md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:group-hover:translate-x-[4px] md:group-hover:translate-y-[4px]" data-scroll-card>
               <div className="relative mb-5 aspect-video w-full overflow-hidden border-b-[3px] border-black bg-gray-50 md:mb-6 md:border-b-[4px]">
                 <img
                   alt={`${project.title} preview`}
-                  className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                  className="media-zoom absolute inset-0 h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                   src={previewImages[index % previewImages.length]}
                 />
                 <div
@@ -115,11 +116,11 @@ export function ProjectSection({ projects, previewImages }: ProjectSectionProps)
                 href={`/projects/${project.slug}`}
                 key={project.slug}
               >
-                <div className="relative flex h-full min-h-[420px] flex-col border-[3px] border-black bg-white p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all group-hover:translate-x-[3px] group-hover:translate-y-[3px] group-hover:shadow-none md:min-h-[448px] md:border-[4px] md:p-6 md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:group-hover:translate-x-[4px] md:group-hover:translate-y-[4px]">
+                <div className="panel-hover relative flex h-full min-h-[420px] flex-col border-[3px] border-black bg-white p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all group-hover:translate-x-[3px] group-hover:translate-y-[3px] group-hover:shadow-none md:min-h-[448px] md:border-[4px] md:p-6 md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:group-hover:translate-x-[4px] md:group-hover:translate-y-[4px]" data-scroll-card>
                   <div className="relative mb-5 aspect-video w-full overflow-hidden border-b-[3px] border-black bg-gray-50 md:mb-6 md:border-b-[4px]">
                     <img
                       alt={`${project.title} preview`}
-                      className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                      className="media-zoom absolute inset-0 h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                       src={previewImages[(index + 3) % previewImages.length]}
                     />
                     <div

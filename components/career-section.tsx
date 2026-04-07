@@ -36,7 +36,7 @@ export function CareerSection({ blocks }: CareerSectionProps) {
 
     return (
       <div
-        className="group flex h-full min-h-[320px] flex-col justify-between bg-stone-950 p-6 transition-all duration-500 md:min-h-0 md:p-8"
+        className="panel-hover group flex h-full min-h-[320px] flex-col justify-between bg-stone-950 p-6 transition-all duration-500 md:min-h-0 md:p-8"
         key={`${block.title}-${block.period}`}
       >
         <div className="mb-8 md:mb-12">
@@ -84,7 +84,8 @@ export function CareerSection({ blocks }: CareerSectionProps) {
 
   return (
     <section
-      className="relative mx-auto max-w-7xl scroll-mt-28 overflow-hidden bg-stone-950 px-4 py-7 font-sans sm:px-6 md:py-10"
+      className="reveal-scale stagger-1 relative mx-auto max-w-7xl scroll-mt-28 overflow-hidden bg-stone-950 px-4 py-7 font-sans sm:px-6 md:py-10"
+      data-scroll-section
       id="career"
       ref={sectionRef}
     >
@@ -95,7 +96,7 @@ export function CareerSection({ blocks }: CareerSectionProps) {
             Career // Backend_Operations // 2026
           </span>
         </div>
-        <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white italic sm:text-6xl md:text-[5rem]">
+        <h2 className="text-5xl font-black uppercase leading-[0.82] tracking-tight text-white italic sm:text-6xl md:text-[5rem]" data-scroll-title>
           Career
           <span className="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.42)]"> TRACK</span>
         </h2>
@@ -111,11 +112,11 @@ export function CareerSection({ blocks }: CareerSectionProps) {
               에스씨엠솔루션이 퍼스트밸류로 법인을 변경하며 핀버라는 서비스로 피벗했습니다.
             </p>
           </div>
-          <div className="grid h-full grid-cols-1 gap-px bg-stone-800 md:grid-cols-2">
+          <div className="grid h-full grid-cols-1 gap-px bg-stone-800 md:grid-cols-2" data-scroll-card>
             {primaryBlocks.slice(0, 2).map((block, index) => renderCard(block, index))}
           </div>
         </div>
-        <div className="h-full border-2 border-stone-800 bg-stone-800 p-px">
+        <div className="h-full border-2 border-stone-800 bg-stone-800 p-px" data-scroll-card>
           {primaryBlocks[2] ? renderCard(primaryBlocks[2], 2) : null}
         </div>
       </div>
