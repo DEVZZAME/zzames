@@ -4,6 +4,7 @@ import { useActionState, useRef, useState } from "react";
 import Image from "next/image";
 
 import { createPostAction, type AdminActionState } from "@/app/admin/actions";
+import { MarkdownEditor } from "@/components/admin/markdown-editor";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -145,12 +146,7 @@ export function PostForm() {
             </select>
           </div>
 
-          <div className="space-y-2">
-            <label className="text-sm font-medium" htmlFor="content">
-              Content
-            </label>
-            <Textarea id="content" name="content" placeholder="문단은 빈 줄로 구분" />
-          </div>
+          <MarkdownEditor label="Content" name="content" placeholder="마크다운으로 작성하세요. 이미지, 제목, 리스트를 바로 넣을 수 있습니다." />
 
           <div className="space-y-2">
             <label className="text-sm font-medium" htmlFor="tags">

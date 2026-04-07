@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,11 +71,19 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       ) : null}
       <Card>
         <CardContent className="space-y-6 pt-6">
-          {post.content.map((paragraph) => (
-            <p className="text-base leading-8 text-muted-foreground" key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
+          <div className="prose prose-neutral max-w-none leading-8">
+            <ReactMarkdown
+              components={{
+                img: ({ alt, src }) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img alt={alt || ""} className="my-8 w-full rounded-lg border border-border" src={src || ""} />
+                ),
+              }}
+              remarkPlugins={[remarkGfm]}
+            >
+              {post.content}
+            </ReactMarkdown>
+          </div>
         </CardContent>
       </Card>
     </article>

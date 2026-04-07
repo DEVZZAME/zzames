@@ -99,7 +99,7 @@ export async function getPublicPosts() {
       excerpt: post.excerpt ?? "",
       publishedAt: post.publishedAt?.toISOString().slice(0, 10) ?? post.createdAt.toISOString().slice(0, 10),
       tags: post.tags.map((tag) => tag.tag.name),
-      content: post.content.split("\n\n").filter(Boolean),
+      content: post.content,
       coverImageUrl: post.coverImageUrl ?? "",
       coverImageAlt: post.coverImageAlt ?? "",
     }));
@@ -197,7 +197,7 @@ export async function getAdminPosts() {
       excerpt: post.excerpt ?? "",
       publishedAt: post.publishedAt?.toISOString().slice(0, 10) ?? post.createdAt.toISOString().slice(0, 10),
       tags: post.tags.map((tag) => tag.tag.name),
-      content: post.content.split("\n\n").filter(Boolean),
+      content: post.content,
       status: post.status,
       coverImageUrl: post.coverImageUrl ?? "",
       coverImageAlt: post.coverImageAlt ?? "",
