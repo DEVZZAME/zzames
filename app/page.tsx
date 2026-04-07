@@ -71,7 +71,7 @@ export default async function Home() {
             <div className="relative z-10 flex flex-col justify-between gap-10 px-4 py-5 md:px-8 md:py-8">
               <div className="space-y-4">
                 <p className="reveal-up text-[10px] font-semibold uppercase tracking-[0.32em] text-black/38">
-                  Back-end Developer
+                  Web Back-end Developer
                 </p>
                 <h1 className="reveal-up reveal-delay-1 max-w-4xl text-5xl font-black uppercase leading-[0.86] tracking-[-0.08em] md:text-[8.5rem]">
                   Hi, I&apos;m
