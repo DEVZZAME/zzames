@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     description: post.excerpt,
     path: `/blog/${post.slug}`,
     type: "article",
+    imagePath: post.coverImageUrl || "/images/profile.png",
     keywords: post.tags,
   });
 }
@@ -54,6 +56,17 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         <h1 className="text-4xl font-semibold tracking-tight">{post.title}</h1>
         <p className="text-sm text-muted-foreground">{post.publishedAt}</p>
       </header>
+      {post.coverImageUrl ? (
+        <div className="relative aspect-[16/8] overflow-hidden rounded-lg border border-border">
+          <Image
+            alt={post.coverImageAlt || post.title}
+            className="object-cover"
+            fill
+            src={post.coverImageUrl}
+            unoptimized
+          />
+        </div>
+      ) : null}
       <Card>
         <CardContent className="space-y-6 pt-6">
           {post.content.map((paragraph) => (

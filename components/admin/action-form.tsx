@@ -14,6 +14,10 @@ type Field = {
   placeholder?: string;
   multiline?: boolean;
   type?: string;
+  options?: Array<{
+    label: string;
+    value: string;
+  }>;
 };
 
 type ActionFormProps = {
@@ -47,6 +51,19 @@ export function ActionForm({ title, description, fields, submitLabel, action }: 
               </label>
               {field.multiline ? (
                 <Textarea id={field.name} name={field.name} placeholder={field.placeholder} />
+              ) : field.options ? (
+                <select
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                  defaultValue={field.options[0]?.value}
+                  id={field.name}
+                  name={field.name}
+                >
+                  {field.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               ) : (
                 <Input
                   id={field.name}

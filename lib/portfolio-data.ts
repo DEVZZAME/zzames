@@ -48,6 +48,8 @@ export type BlogPostItem = {
   publishedAt: string;
   tags: string[];
   content: string[];
+  coverImageUrl?: string;
+  coverImageAlt?: string;
 };
 
 export const profile = {

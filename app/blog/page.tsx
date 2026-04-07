@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
@@ -30,6 +31,17 @@ export default async function BlogPage() {
       <div className="grid gap-6">
         {posts.map((post) => (
           <Card key={post.slug}>
+            {post.coverImageUrl ? (
+              <div className="relative aspect-[16/8] overflow-hidden border-b border-border">
+                <Image
+                  alt={post.coverImageAlt || post.title}
+                  className="object-cover"
+                  fill
+                  src={post.coverImageUrl}
+                  unoptimized
+                />
+              </div>
+            ) : null}
             <CardHeader>
               <CardTitle>{post.title}</CardTitle>
               <CardDescription>{post.publishedAt}</CardDescription>

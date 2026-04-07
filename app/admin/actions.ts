@@ -29,10 +29,14 @@ export async function createPostAction(
   const slug = String(formData.get("slug") ?? "").trim();
   const excerpt = String(formData.get("excerpt") ?? "").trim();
   const content = String(formData.get("content") ?? "").trim();
+  const coverImageUrl = String(formData.get("coverImageUrl") ?? "").trim();
+  const coverImageAlt = String(formData.get("coverImageAlt") ?? "").trim();
+  const statusValue = String(formData.get("status") ?? "DRAFT").trim().toUpperCase();
   const tags = String(formData.get("tags") ?? "")
     .split(",")
     .map((tag) => tag.trim())
     .filter(Boolean);
+  const status = statusValue === "PUBLISHED" ? "PUBLISHED" : "DRAFT";
 
   if (!title || !slug || !content) {
     return { error: "title, slug, content는 필수입니다." };
@@ -45,8 +49,10 @@ export async function createPostAction(
         slug,
         excerpt,
         content,
-        status: "PUBLISHED",
-        publishedAt: new Date(),
+        coverImageUrl,
+        coverImageAlt,
+        status,
+        publishedAt: status === "PUBLISHED" ? new Date() : null,
         tags: {
           create: tags.map((tag) => ({
             tag: {
@@ -65,7 +71,7 @@ export async function createPostAction(
 
     revalidatePath("/admin/posts");
     revalidatePath("/blog");
-    return { success: "블로그 글을 저장했습니다." };
+    return { success: status === "PUBLISHED" ? "블로그 글을 공개 저장했습니다." : "블로그 글을 비공개 초안으로 저장했습니다." };
   } catch (error) {
     return { error: error instanceof Error ? error.message : "글 저장 중 오류가 발생했습니다." };
   }

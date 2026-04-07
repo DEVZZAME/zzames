@@ -65,6 +65,8 @@ model BlogPost {
   title       String
   excerpt     String?         @db.Text
   content     String          @db.LongText
+  coverImageUrl String?       @db.Text
+  coverImageAlt String?
   status      PublishStatus   @default(DRAFT)
   publishedAt DateTime?
   createdAt   DateTime        @default(now())

@@ -100,6 +100,8 @@ export async function getPublicPosts() {
       publishedAt: post.publishedAt?.toISOString().slice(0, 10) ?? post.createdAt.toISOString().slice(0, 10),
       tags: post.tags.map((tag) => tag.tag.name),
       content: post.content.split("\n\n").filter(Boolean),
+      coverImageUrl: post.coverImageUrl ?? "",
+      coverImageAlt: post.coverImageAlt ?? "",
     }));
   } catch {
     return blogPosts;
@@ -197,6 +199,8 @@ export async function getAdminPosts() {
       tags: post.tags.map((tag) => tag.tag.name),
       content: post.content.split("\n\n").filter(Boolean),
       status: post.status,
+      coverImageUrl: post.coverImageUrl ?? "",
+      coverImageAlt: post.coverImageAlt ?? "",
     }));
   } catch {
     return blogPosts.map((post) => ({ ...post, status: "PUBLISHED" as const }));
