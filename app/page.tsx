@@ -78,7 +78,7 @@ export default async function Home() {
                 <h1 className="reveal-up reveal-delay-1 max-w-4xl text-5xl font-black uppercase leading-[0.86] tracking-[-0.08em] md:text-[8.5rem]">
                   Hi, I&apos;m
                   <br />
-                  Hansol!
+                  Hansol!!
                 </h1>
                 <div className="reveal-up reveal-delay-2 flex flex-wrap items-center gap-4 pt-1">
                   <span className="hover-lift bg-black px-4 py-2.5 text-xs font-bold uppercase tracking-[0.08em] text-white">
