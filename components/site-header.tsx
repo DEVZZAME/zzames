@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Github, Linkedin, Menu, Slash } from "lucide-react";
 
 import { SiteStackModal } from "@/components/site-stack-modal";
-import { ButtonLink } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 
 const navItems = [
@@ -45,14 +44,13 @@ export function SiteHeader() {
           <a className="transition-transform duration-200 hover:-translate-y-0.5" href={siteConfig.githubUrl} rel="noreferrer" target="_blank">
             <Github className="size-4 text-black" />
           </a>
-          <ButtonLink
-            className="hover-lift h-11 rounded-none border-2 border-black bg-white px-7 text-[11px] font-bold uppercase tracking-[0.22em] text-black hover:bg-black hover:text-white"
-            href="/projects"
-            size="sm"
-            variant="outline"
+          <a
+            className="hover-lift inline-flex h-11 items-center justify-center rounded-none border-2 border-black bg-white px-7 text-[11px] font-bold uppercase tracking-[0.22em] text-black transition-colors hover:bg-black hover:text-white"
+            href="/api/resume"
+            download
           >
             Resume
-          </ButtonLink>
+          </a>
         </div>
         <div className="md:hidden">
           <button
