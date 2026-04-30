@@ -94,7 +94,7 @@ export const strengths = [
 
 export const experiences: ExperienceItem[] = [
   {
-    company: "퍼스트벨류",
+    company: "주식회사 퍼스트벨류",
     project: "핀버",
     period: "2025.02 - 2026.02",
     role: "Back-end Developer",
@@ -110,7 +110,7 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    company: "에스씨엠솔루션",
+    company: "주식회사 에스씨엠솔루션",
     project: "셀러라인",
     period: "2023.06 - 2024.08",
     role: "Back-end Developer",
@@ -125,7 +125,7 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    company: "크리쳐헌터스",
+    company: "주식회사 크리쳐헌터스",
     project: "게임 개발팀",
     period: "2023.03 - 2023.05",
     role: "Backend / Ops Engineer",
@@ -134,6 +134,19 @@ export const experiences: ExperienceItem[] = [
       "P2E 게임 SES 메일발송 및 로드밸런싱",
       "AWS EC2, S3, RDS, CloudWatch 세팅",
       "사내 이슈관리 시스템 Redmine 구축",
+    ],
+  },
+  {
+    company: "주식회사 워킹맘",
+    project: "마케팅팀",
+    period: "2019.02 - 2021.11",
+    role: "Web Developer / Web Designer",
+    highlights: [
+      "맛들애(PB) 홈페이지 제작 및 배포",
+      "맛들애 재고 관리 어드민 페이지 개발(기획/DB 설계/개발/배포)",
+      "자사 브랜드 웹사이트 내 PG 연동",
+      "소금꽃 베이커리(PB) 쇼핑몰 기획 및 개발",
+      "아이밀(PB) 반찬 예약주문 사이트(기획/DB 설계/개발/배포)"
     ],
   },
 ];

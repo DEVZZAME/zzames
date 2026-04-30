@@ -11,8 +11,8 @@ import { siteConfig } from "@/lib/site-config";
 
 const navItems = [
   { href: "/#about", label: "About" },
-  { href: "/#projects", label: "Projects" },
   { href: "/#career", label: "Career" },
+  { href: "/#projects", label: "Projects" },
 ];
 
 export function SiteHeader() {

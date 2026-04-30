@@ -127,7 +127,7 @@ export function CareerSection({ blocks }: CareerSectionProps) {
             expanded ? "mt-px max-h-[2400px] opacity-100" : "mt-0 max-h-0 opacity-0"
           }`}
         >
-          <div className="grid grid-cols-1 gap-px border-x-2 border-b-2 border-stone-800 bg-stone-800 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-px border-x-2 border-b-2 border-stone-800 bg-stone-800 lg:grid-cols-3">
             {extraBlocks.map((block, index) => (
               <div
                 className={`transition-all duration-500 ${
