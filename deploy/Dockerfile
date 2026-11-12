@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-cert
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
-COPY  ./
+COPY . ./
 ENV NEXT_TELEMETRY_DISABLED=1 AUTH_SECRET=build-only-placeholder-not-a-runtime-secret DATABASE_URL=mysql://build:build@127.0.0.1:3306/build
 RUN if [ -f prisma/schema.prisma ]; then npx prisma generate; fi
 RUN npx next build --webpack
