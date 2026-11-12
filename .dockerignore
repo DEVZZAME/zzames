@@ -1,0 +1,16 @@
+**/node_modules
+**/.next
+**/.git
+**/.env*
+**/*.pem
+!**/config/rds-ca.pem
+**/*.db*
+**/*.p8
+**/*.key
+**/backup-*.json
+**/memory
+**/playwright-report
+**/test-results
+mincho-native
+reinstall.sh
+**/.DS_Store

@@ -1,4 +1,5 @@
 "use client";
+import {uploadViaS3} from "@/lib/direct-upload-client";
 
 import { useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
@@ -50,10 +51,7 @@ export function MarkdownEditor({ name, label, placeholder }: MarkdownEditorProps
       const formData = new FormData();
       formData.append("file", file);
 
-      const response = await fetch("/api/admin/uploads/blog-cover", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await uploadViaS3("/api/admin/uploads/blog-cover", file);
 
       const result = (await response.json()) as { url?: string; error?: string };
 

@@ -1,3 +1,4 @@
+import {uploadedFile,removeUpload} from "@/lib/direct-upload";
 import { NextResponse } from "next/server";
 
 import { getSession } from "@/lib/auth";
@@ -12,8 +13,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const formData = await request.formData();
-  const file = formData.get("file");
+  const {file,key} = await uploadedFile(request);
 
   if (!(file instanceof File)) {
     return NextResponse.json({ error: "업로드할 파일이 필요합니다." }, { status: 400 });
@@ -31,5 +31,6 @@ export async function POST(request: Request) {
     contentType: file.type,
   });
 
+  if(key) await removeUpload(key);
   return NextResponse.json(uploaded);
 }
